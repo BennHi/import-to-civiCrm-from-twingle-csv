@@ -13,6 +13,7 @@ A small script that allows Twingle users to import data from the csv file Twingl
 - You have installed and configured the Twingle-API Extension in your CiviCRM https://github.com/systopia/de.systopia.twingle/
 - You are familiar with the Twingle-API documentation https://docs.civicrm.org/twingle/en/latest/
 - You have a csv-file that follows the Twingle-csv layout, with desprictors in the first row, seperators being ";" and formatted in UTF-8. Please do not use Excel to modify the csv (trust me) unless you are really know what you're doing. My suggestion is to use LibreOffice instead.
+- If your data contains memberships (and especially if you also use project60.membership) you might want to follow these steps before executing this script. 1. Set up the membership-rules in Civi in such a way, that on import no membership will be declared as expired or inactive. I for example temporarily deactivated the rule for 'expired' and removed the ending condition on 'contribution overdue'. The terminology and logic might vary for your setup. 2. Run the script. 3. Run project60.membership's 'sync memberships' function (optional). 4. Execute project60.membership's 'extend memberships'-job (optional). 5. Revert your membership-rule changes. 6. Execute the 'update membership statuses' job. Et voila! You should be good to go!
 
 ## Installation
 - Clone or manually download this repo to your computer.
